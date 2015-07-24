@@ -23,9 +23,11 @@
  *
  ***********************************************************************************/
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+//WWF: Commented out until 6.3+ xcode is supported
+//NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Constants for identifying link types we can detect
@@ -121,7 +123,7 @@ IB_DESIGNABLE
  *
  * @discussion The comparison between the matches and the ignored words is case insensitive.
  */
-@property (nullable, nonatomic, strong) NSSet *ignoredKeywords;
+@property (nonatomic, strong) NSSet *ignoredKeywords;
 
 /** ****************************************************************************************** **
  * @name Format & Appearance
@@ -132,7 +134,7 @@ IB_DESIGNABLE
  *
  * @discussion The default value is (0.95, 0.95, 0.95, 1.0).
  */
-@property (nullable, nonatomic, copy) IBInspectable UIColor *selectedLinkBackgroundColor;
+@property (nonatomic, copy) IBInspectable UIColor *selectedLinkBackgroundColor;
 
 /**
  * Flag sets if the sytem appearance for URLs should be used (underlined + blue color). Default value is NO.
@@ -146,7 +148,7 @@ IB_DESIGNABLE
  * @return A dictionary of text attributes.
  * @discussion Default attributes contain colored font using the tintColor color property.
  */
-- (nullable NSDictionary*)attributesForLinkType:(KILinkType)linkType;
+- (NSDictionary*)attributesForLinkType:(KILinkType)linkType;
 
 /**
  * Set the text attributes for each link type.
@@ -155,7 +157,7 @@ IB_DESIGNABLE
  * @param linkType The link type.
  * @discussion Default attributes contain colored font using the tintColor color property.
  */
-- (void)setAttributes:(nullable NSDictionary*)attributes forLinkType:(KILinkType)linkType;
+- (void)setAttributes:(NSDictionary*)attributes forLinkType:(KILinkType)linkType;
 
 /** ****************************************************************************************** **
  * @name Callbacks
@@ -164,17 +166,17 @@ IB_DESIGNABLE
 /**
  * Callback block for KILinkTypeUserHandle link tap.
  **/
-@property (nullable, nonatomic, copy) KILinkTapHandler userHandleLinkTapHandler;
+@property (nonatomic, copy) KILinkTapHandler userHandleLinkTapHandler;
 
 /**
  * Callback block for KILinkTypeHashtag link tap.
  */
-@property (nullable, nonatomic, copy) KILinkTapHandler hashtagLinkTapHandler;
+@property (nonatomic, copy) KILinkTapHandler hashtagLinkTapHandler;
 
 /**
  * Callback block for KILinkTypeURL link tap.
  */
-@property (nullable, nonatomic, copy) KILinkTapHandler urlLinkTapHandler;
+@property (nonatomic, copy) KILinkTapHandler urlLinkTapHandler;
 
 /** ****************************************************************************************** **
  * @name Geometry
@@ -192,8 +194,9 @@ IB_DESIGNABLE
  * @param point The point in the coordinates of the label view.
  * @return A dictionary containing the link.
  */
-- (nullable NSDictionary*)linkAtPoint:(CGPoint)point;
+- (NSDictionary*)linkAtPoint:(CGPoint)point;
 
 @end
 
-NS_ASSUME_NONNULL_END
+//WWF: Commented out until 6.3+ xcode is supported
+//NS_ASSUME_NONNULL_END
